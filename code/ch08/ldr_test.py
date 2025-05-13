@@ -1,7 +1,7 @@
 from gpiozero import OutputDevice, InputDevice
 from time import sleep, time
 
-def LDR_value(pin, charge_time_limit=0.005):
+def LDR_value(pin, charge_time_limit=0.005, min_readings=100):
     
     # Take the pin LOW to discharge the capacitor
     ldr = OutputDevice(pin=pin, active_high=True, 
@@ -24,8 +24,7 @@ def LDR_value(pin, charge_time_limit=0.005):
             lit += 1
 
     ldr.close()
-    print(lit)
-    return lit > 5
+    return lit > min_readings
 
 while True:
     print(LDR_value(4))
