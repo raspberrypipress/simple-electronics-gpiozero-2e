@@ -19,6 +19,7 @@ def LDR_value(pin, charge_time_limit=0.001):
 
     return lit
 
+ldr_pin = 4
 while True:
-    print(LDR_value(4))
+    print(LDR_value(ldr_pin))
     sleep(1)  # Wait for a second
