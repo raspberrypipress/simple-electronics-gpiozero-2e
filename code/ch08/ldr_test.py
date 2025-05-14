@@ -1,7 +1,7 @@
-from gpiozero import OutputDevice, InputDevice
+from gpiozero import OutputDevice, DigitalInputDevice
 from time import sleep, time
 
-def LDR_value(pin, charge_time_limit=0.005, min_readings=100):
+def LDR_value(pin, charge_time_limit=0.003):
     
     # Take the pin LOW to discharge the capacitor
     ldr = OutputDevice(pin=pin)
@@ -10,18 +10,17 @@ def LDR_value(pin, charge_time_limit=0.005, min_readings=100):
     ldr.close()
 
     # Configure the pin as a floating input
-    ldr = InputDevice(pin=pin, pull_up=None, active_state=True)
+    ldr = DigitalInputDevice(pin=pin, pull_up=None, 
+                             active_state=True)
 
-    # Wait until the time limit for the capacitor to recharge 
-    lit = 0
+    # Wait until the time limit for the capacitor to recharge
     start = time()
-    while time() - start < charge_time_limit:
-        if ldr.is_active:
-            lit = 1
-            break
-    ldr.close()
+    ldr.wait_for_active(timeout=charge_time_limit)
 
-    return lit
+    # If the pin was active before the timeout, we have light
+    elapsed = time() - start
+    ldr.close()
+    return elapsed < charge_time_limit
 
 while True:
     print(LDR_value(4))
