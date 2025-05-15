@@ -18,7 +18,6 @@ def move(direction='F', ctr=geared_steps):
     step_dir = 1 # 1 for fwd, -1 for back
     if direction == 'B':
         step_dir = -step_dir
-    print(direction)
     
     while ctr > 0: 
         if sensor.distance > .1: # move if no obstacles
