@@ -9,7 +9,7 @@ num_steps = 32
 gear_ratio = 64
 geared_steps = num_steps * gear_ratio
 
-step_motor_l = Stepper(motor_pins=[17, 18, 21, 22],
+step_motor_l = Stepper(motor_pins=[14, 15, 18, 23],
                        number_of_steps=num_steps)
 step_motor_r = Stepper(motor_pins=[19, 13, 5, 6],
                        number_of_steps=num_steps)
