@@ -7,5 +7,5 @@ Example code and resources from the Raspberry Pi Press book, Simple electronics 
 <a name="errata"></a>
 
 * [Open issues](https://github.com/raspberrypipress/simple-electronics-gpiozero-2e/issues)
-* Preorder the book: [Amazon UK](https://www.amazon.co.uk/Simple-electronics-GPIO-Zero-Essentials/dp/1916868444) | [Amazon US](https://www.amazon.com/Simple-electronics-GPIO-Zero-Essentials/dp/1916868444)
+* Order the book: [Raspberry Pi Press](https://store.rpipress.cc/collections/latest-releases/products/simple-electronics-with-gpio-zero-1) | [Amazon UK](https://www.amazon.co.uk/Simple-electronics-GPIO-Zero-Essentials/dp/1916868444) | [Amazon US](https://www.amazon.com/Simple-electronics-GPIO-Zero-Essentials/dp/1916868444)
 <img src="https://github.com/raspberrypipress/simple-electronics-gpiozero-2e/blob/main/images/9781916868441.jpg?raw=true" width="512" alt="Book cover image" />
